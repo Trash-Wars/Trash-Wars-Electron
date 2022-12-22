@@ -1,0 +1,128 @@
+
+.tile {
+  border: 1px solid black;
+  border-bottom: none;
+  border-right: none;
+  -webkit-box-shadow: inset 0 0 2px 2px #074430;
+  box-shadow: inset 0 0 2px 2px #02702c;
+  
+  image-rendering: pixelated;
+  
+}
+
+.gameBoard {
+  width: 100%;
+  height: 100%;
+  display: flex; 
+  justify-content: center;
+  background-image: url('../../assets/marble_wall1.png');
+}
+
+.tile:last-child, .rows:last-child > .tile {
+  border-right: 1px solid black;
+}
+
+.raccoon {
+  position: absolute;
+  margin: 1px 1px;
+}
+
+#death {
+  animation: fadeNFloat 1.2s linear; 
+}
+@keyframes fadeNFloat {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-.25turn);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(-.25turn) translate(0,0);
+  }
+  75% {
+    opacity: .5;
+    transform: rotate(-.25turn) translate(50%,0);
+  }
+  100%{
+    transform: rotate(-.25turn) translate(100%,0) ;
+    opacity: 0;
+    
+  }
+}
+
+#damage {
+  filter: blur(5px); 
+  transition: filter .1s linear;
+  animation: flash 0.1s linear;
+}
+@keyframes flash {
+  from{
+    filter: brightness(100%)
+  }
+  to {
+    filter:brightness(300%)
+  }
+}
+ .entity:active{
+  filter: blur(3px);
+  transition: filter 0.1s ease;
+} 
+
+
+
+.buttons {
+  text-align: center;
+  display:flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  background-image: url('../../assets/floor_vines0.png');
+}
+
+.button {
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 15px 32px;
+  opacity: .75;
+  background-color:rgba(0, 0, 0, 0);
+  border: 0;
+  color: red;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  align-content: space-between;align-items: flex-start;
+  flex-direction: column;
+}
+
+/* .button:hover {
+  transition: color 1s;
+  color: white;
+} */
+
+.Options {
+  color:white;
+}
+
+.board {
+  background-image: url('../../assets/marble_wall1.png')
+}
+
+/* debug overrides */
+
+/* better show tiles */
+/*
+.tile {
+  border-top: 1px solid purple;
+  border-left: 1px solid yellow;
+} 
+
+.entity {
+  v remove margin from .entity if you uncomment this v
+  border: 1px solid red;
+}
+
+*/
